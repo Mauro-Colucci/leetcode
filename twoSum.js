@@ -31,16 +31,17 @@ Only one valid answer exists.
 
 Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity? */
 
-
-function twoSum (nums, target){
-    let cache ={}
-    for (let i =0; i<nums.length;i++){
-        let remainder = target - nums[i]
-        if(cache[remainder] !== undefined){
-            return [cache[remainder], i]
-        }
-        cache[nums[i]] = i
+function twoSum(nums, target) {
+  let cache = {};
+  for (let i = 0; i < nums.length; i++) {
+    let remainder = target - nums[i];
+    if (cache[remainder] !== undefined) {
+      return [cache[remainder], i];
     }
+    cache[nums[i]] = i;
+  }
 }
 
-console.log(twoSum([2,7,11,15],9), [0,1])
+console.log(twoSum([2, 7, 11, 15], 9), [0, 1]);
+console.log(twoSum([3, 2, 4], 6), [1, 2]);
+console.log(twoSum([3, 3], 6), [0, 1]);
