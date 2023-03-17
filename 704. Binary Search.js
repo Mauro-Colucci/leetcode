@@ -28,7 +28,22 @@ nums is sorted in ascending order. */
  * @param {number} target
  * @return {number}
  */
+
 const search = function (nums, target) {
+  let left = 0,
+    right = nums.length - 1;
+  while (left < right) {
+    let mid = Math.ciel((right + left) / 2);
+    if (target < nums[mid]) {
+      right = mid;
+    } else {
+      left = mid + 1;
+    }
+  }
+  return nums[left] === target ? left : -1;
+};
+
+/* const search = function (nums, target) {
   let left = 0,
     right = nums.length - 1;
   while (left < right) {
@@ -39,8 +54,8 @@ const search = function (nums, target) {
       left = mid;
     }
   }
-  return nums[left] === target ? first : -1;
-};
+  return nums[left] === target ? left : -1;
+}; */
 
 /* const search = function (nums, target) {
   let start = 0,
