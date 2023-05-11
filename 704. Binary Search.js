@@ -35,7 +35,7 @@ const search = function (nums, target) {
   while (left < right) {
     let mid = Math.ciel((right + left) / 2);
     if (target < nums[mid]) {
-      right = mid;
+      right = mid - 1;
     } else {
       left = mid + 1;
     }
